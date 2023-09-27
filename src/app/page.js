@@ -4,9 +4,14 @@ import styles from './page.module.css'
 export default function Home() {
   return (
     <main className="has-background-info">
-        <div className="container">
-            hello there
-        </div>
+        <section className="hero is-fullheight is-link">
+            <div className="hero-body">
+                <div className="container has-text-centered title">
+                        Welcome to Weatherme, your friendly neighbourhood weather app.
+                </div>
+
+            </div>
+        </section>
 
     </main>
   )
