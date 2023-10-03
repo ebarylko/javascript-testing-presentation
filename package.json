@@ -16,6 +16,7 @@
     "sass": "^1.68.0"
   },
   "devDependencies": {
+    "cypress": "^13.3.0",
     "eslint": "latest",
     "eslint-config-next": "latest"
   }
