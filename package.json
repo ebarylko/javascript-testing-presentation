@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3006",
     "acceptance": "npx cypress run",
+    "unit": "npx jest",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
