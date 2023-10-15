@@ -6,7 +6,7 @@ export default function Home() {
     <main className="has-background-info">
         <section className="hero is-fullheight is-link">
             <div className="hero-body">
-                <div className="container has-text-centered title">
+                <div data-testid= "welcome-message" className="container has-text-centered title">
                         Welcome to Weatherme, your friendly neighbourhood weather app.
                 </div>
 
