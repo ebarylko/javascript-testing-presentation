@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3006",
+    "acceptance": "npx cypress run",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
