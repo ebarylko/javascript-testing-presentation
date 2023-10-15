@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3006",
     "acceptance": "npx cypress run",
+    "unit": "npx jest",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "cypress": "^13.3.0",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "jest": "^29.7.0"
   }
 }
