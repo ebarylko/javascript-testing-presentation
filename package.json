@@ -14,7 +14,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "vercel": "^32.4.1"
   },
   "devDependencies": {
     "cypress": "^13.3.0",
