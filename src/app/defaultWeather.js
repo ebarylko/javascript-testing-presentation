@@ -2,7 +2,7 @@ require('dotenv').config();
 const R = require('ramda');
 const nextWeekTemp = (weather) => R.take(7, weather);
 const toCelsius = (temp) => (temp - 32) * 5 / 9;
-const toSingleDecimal = (temp) => Math.round(temp * 10) / 10;
+const toSingleDecimal = (temp) => Math.trunc(temp * 10) / 10;
 export const toCelsiusSingleDecimal = R.pipe(toCelsius, toSingleDecimal);
 
 const weatherUrl = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/vancouver"
