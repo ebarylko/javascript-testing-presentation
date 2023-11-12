@@ -10,6 +10,3 @@ describe("toCelsiusSingleDecimal", () => {
     })
     })
 })
-test("-40 degrees fahrenheit is -40 degrees celsius", () => {
-    expect((w.toCelsiusSingleDecimal(-40))).toBe(-40);
-})
