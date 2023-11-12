@@ -6,10 +6,12 @@ import {useEffect, useState} from "react";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
+    const [temperatures, setTemperatures] = useState([]);
     useEffect(() => {
-        wd.weatherData().then((data) => {
+        wd.weatherData().then(data => {
             setLoading(false);
             console.log(data);
+            setTemperatures(data);
         });
     }, []);
   return(
@@ -19,8 +21,13 @@ export default function Home() {
                 <div data-testid= "welcome-message" className="container has-text-centered title">
                         Welcome to Weatherme, your friendly neighbourhood weather app.
                 </div>
-                {loading && <div> <p>Loading...</p> </div> }
             </div>
+            {loading && <div> <p>Loading...</p> </div> }
+            {!loading && <div className="container has-text-centered title">
+                <ul>
+                    {temperatures.map((temp, index) => (<li key={index}>{temp}</li>))}
+                </ul>
+            </div>}
         </section>
     </main>
   )
