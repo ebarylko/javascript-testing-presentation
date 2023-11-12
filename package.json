@@ -21,6 +21,8 @@
     "vercel": "^32.4.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
     "cypress": "^13.3.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
