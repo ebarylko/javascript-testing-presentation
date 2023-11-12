@@ -27,7 +27,7 @@ export function WeeklyWeather(weather) {
                 <div className="card">
                     <div className="card-content">
                         <div className="content">
-                            {temp} 12
+                            {temp} &deg;C
                         </div>
                     </div>
                 </div>
