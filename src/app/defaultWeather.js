@@ -1,5 +1,8 @@
-require('dotenv').config();
-const R = require('ramda');
+import dotenv from 'dotenv';
+dotenv.config();
+// require('dotenv').config();
+import * as R from "ramda";
+// const R = require('ramda');
 const nextWeekTemp = (weather) => R.take(7, weather);
 const toCelsius = (temp) => (temp - 32) * 5 / 9;
 const toSingleDecimal = (temp) => Math.trunc(temp * 10) / 10;
