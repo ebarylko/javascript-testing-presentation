@@ -19,3 +19,19 @@ export function weatherData() {
         return response.json()
     }).then(data => data.days.map(day => toCelsiusSingleDecimal(day.temp)))
 }
+
+export function WeeklyWeather(weather) {
+    console.log(weather.weather)
+    return weather.weather.map((temp, key) => (
+            (<li key={key}>
+                <div className="card">
+                    <div className="card-content">
+                        <div className="content">
+                            {temp} 12
+                        </div>
+                    </div>
+                </div>
+            </li>)
+        )
+    )
+}

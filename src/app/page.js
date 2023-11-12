@@ -25,7 +25,8 @@ export default function Home() {
             {loading && <div> <p>Loading...</p> </div> }
             {!loading && <div className="container has-text-centered title">
                 <ul>
-                    {temperatures.map((temp, index) => (<li key={index}>{temp}</li>))}
+                    <wd.WeeklyWeather weather={temperatures}/>
+                    {/*{temperatures.map((temp, index) => (<li key={index}>{temp}</li>))}*/}
                 </ul>
             </div>}
         </section>
