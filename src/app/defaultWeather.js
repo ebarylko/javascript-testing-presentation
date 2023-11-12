@@ -1,5 +1,6 @@
 require('dotenv').config();
 const R = require('ramda');
+const nextWeekTemp = (weather) => R.take(7, weather);
 const toCelsius = (temp) => (temp - 32) * 5 / 9;
 const toSingleDecimal = (temp) => Math.round(temp * 10) / 10;
 const toCelsiusSingleDecimal = R.pipe(toCelsius, toSingleDecimal);
@@ -17,21 +18,19 @@ export function weatherData() {
         }
 
         return response.json()
-    }).then(data => data.days.map(day => toCelsiusSingleDecimal(day.temp)))
+    }).then(data => nextWeekTemp(data.days).map(day => toCelsiusSingleDecimal(day.temp)))
 }
 
 export function WeeklyWeather(weather) {
     console.log(weather.weather)
     return weather.weather.map((temp, key) => (
-            (<li key={key}>
-                <div className="card">
+            (<div key={key} className="card">
                     <div className="card-content">
                         <div className="content">
                             {temp} &deg;C
                         </div>
                     </div>
-                </div>
-            </li>)
+                </div>)
         )
     )
 }

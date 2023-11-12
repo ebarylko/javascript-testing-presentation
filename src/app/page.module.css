@@ -7,6 +7,12 @@
   min-height: 100vh;
 }
 
+.weather {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

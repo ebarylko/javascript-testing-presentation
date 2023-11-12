@@ -24,10 +24,10 @@ export default function Home() {
             </div>
             {loading && <div> <p>Loading...</p> </div> }
             {!loading && <div className="container has-text-centered title">
-                <ul className="is-flex">
+                <div className={styles.weather}>
                     <wd.WeeklyWeather weather={temperatures}/>
                     {/*{temperatures.map((temp, index) => (<li key={index}>{temp}</li>))}*/}
-                </ul>
+                </div>
             </div>}
         </section>
     </main>
