@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3006",
+    "dev": "next dev -p 3008",
     "acceptance": "npx cypress run",
     "unit": "npx jest",
     "build": "next build",
@@ -12,10 +12,13 @@
   },
   "dependencies": {
     "bulma": "^0.9.4",
+    "dotenv": "^16.3.1",
     "next": "latest",
+    "ramda": "^0.29.1",
     "react": "latest",
     "react-dom": "latest",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "vercel": "^32.4.1"
   },
   "devDependencies": {
     "cypress": "^13.3.0",
