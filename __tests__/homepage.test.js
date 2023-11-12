@@ -1,5 +1,4 @@
-import * as w from "./src/app/defaultWeather.js"
-const {toCelsiusSingleDecimal} = require('./src/app/defaultWeather.js');
+const {toCelsiusSingleDecimal} = require('../src/app/defaultWeather.js');
 const R = require('ramda');
 describe("toCelsiusSingleDecimal", () => {
     const fahrenheitTemps = [32, -25, 90, 0, -40];
