@@ -1,8 +1,8 @@
-const {toCelsiusSingleDecimal} = require('../src/app/defaultWeather.js');
 const R = require('ramda');
 import * as React from 'react';
-const { render, screen } =  require('@testing-library/react');
+const { render, screen , queryAllByTestId} =  require('@testing-library/react');
 const { WeeklyWeather } = require('../src/app/defaultWeather.js');
+const {toCelsiusSingleDecimal} = require('../src/app/defaultWeather.js');
 
 describe("toCelsiusSingleDecimal", () => {
     const fahrenheitTemps = [32, -25, 90, 0, -40];
@@ -12,30 +12,20 @@ describe("toCelsiusSingleDecimal", () => {
     })
 })
 
-const tempsToColl = (temps) => R.map(
-    R.pipe((temp) => temp.textContent, R.take(1), parseInt),
+const parseTemperatures = (temps) => R.map(
+    R.pipe((temp) => temp.textContent, parseInt),
     temps)
 
+
 describe('WeeklyWeather', () => {
+    beforeEach(() => render(<WeeklyWeather weather = {temperatures}/>))
     const temperatures = [1];
    describe("When rendering next week's weather", () => {
-       render(<WeeklyWeather weather = {temperatures}/>)
-       // screen.debug()
-       screen.debug(screen.queryByTestId("temp"))
-       const nodes = screen.queryByTestId("temp");
-       console.log(nodes.textContent, "The content");
-       const text = nodes.textContent;
-         console.log(parseInt(R.take(1, text)), "The changed text");
-       const vals = R.map(tempsToColl, nodes);
-        const actual = screen.queryByTestId('temp').textContent;
-       console.log(vals, "The temperatures")
-       screen.queryByTestId("temp")
        it("Should display the correct temperatures", () => {
-           const actual = screen.queryByTestId('temp');
-           // console.log(actual)
+           const actual = screen.queryAllByTestId('temp');
            const expected = [1];
-           // expect(actual).toEqual(expected);
-           expect(actual).toEqual(expected);
+           const actualTemps = parseTemperatures(actual);
+           expect(actualTemps).toEqual(expected);
        })
    })
 })

@@ -27,10 +27,10 @@ export function weatherData() {
 
 export function WeeklyWeather(weather) {
     const temperatures = weather.weather.map((temp, key) => (
-        <div data-testid="1" key={key} className="card">
+        <div key={key} className="card">
             <div className="card-content">
-                <div data-testid='temp' className="content">
-                    {temp} &deg;C
+                <div className="content">
+                    <span data-testid='temp'> {temp} </span> &deg;C
                 </div>
             </div>
         </div>
