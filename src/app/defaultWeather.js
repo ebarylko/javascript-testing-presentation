@@ -26,13 +26,15 @@ export function weatherData() {
 
 export function WeeklyWeather(weather) {
     return weather.weather.map((temp, key) => (
-            (<div key={key} className="card">
+            (
+                <div data-testid="1" key={key} className="card">
                     <div className="card-content">
-                        <div className="content">
+                        <div data-testid='temp' className="content">
                             {temp} &deg;C
                         </div>
                     </div>
-                </div>)
+                </div>
+            )
         )
     )
 }
