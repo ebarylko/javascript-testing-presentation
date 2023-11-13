@@ -3,6 +3,7 @@ dotenv.config();
 // require('dotenv').config();
 import * as R from "ramda";
 // const R = require('ramda');
+import styles from './page.module.css'
 const nextWeekTemp = (weather) => R.take(7, weather);
 const toCelsius = (temp) => (temp - 32) * 5 / 9;
 const toSingleDecimal = (temp) => Math.trunc(temp * 10) / 10;
@@ -25,16 +26,14 @@ export function weatherData() {
 }
 
 export function WeeklyWeather(weather) {
-    return weather.weather.map((temp, key) => (
-            (
-                <div data-testid="1" key={key} className="card">
-                    <div className="card-content">
-                        <div data-testid='temp' className="content">
-                            {temp} &deg;C
-                        </div>
-                    </div>
+    const temperatures = weather.weather.map((temp, key) => (
+        <div data-testid="1" key={key} className="card">
+            <div className="card-content">
+                <div data-testid='temp' className="content">
+                    {temp} &deg;C
                 </div>
-            )
-        )
-    )
+            </div>
+        </div>
+    ))
+    return <div className={styles.weather}>  {temperatures} </div>
 }
