@@ -23,8 +23,9 @@ export function weatherData() {
     }).then(data => nextWeekTemp(data.days).map(day => toCelsiusSingleDecimal(day.temp)))
 }
 
-export function WeeklyWeather(weather) {
-    const temperatures = weather.weather.map((temp, key) => (
+export function WeeklyWeather(props) {
+    console.log(props.weather)
+    const temperatures = props.weather.map((temp, key) => (
         <div key={key} className="card">
             <div className="card-content">
                 <div className="content">
@@ -33,5 +34,5 @@ export function WeeklyWeather(weather) {
             </div>
         </div>
     ))
-    return <div className={styles.weather}>  {temperatures} </div>
+    return <div className={styles.weather}>{temperatures}</div>
 }

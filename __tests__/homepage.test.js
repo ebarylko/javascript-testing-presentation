@@ -1,8 +1,9 @@
 import * as R from 'ramda';
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
-import { WeeklyWeather } from '../src/app/defaultWeather.js';
-import { toCelsiusSingleDecimal } from '../src/app/defaultWeather.js';
+import {cleanup, render, screen} from '@testing-library/react';
+
+import { WeeklyWeather } from '@/app/defaultWeather.js';
+import { toCelsiusSingleDecimal } from '@/app/defaultWeather.js';
 
 describe("toCelsiusSingleDecimal", () => {
     const fahrenheitTemps = [32, -25, 90, 0, -40];
@@ -17,15 +18,22 @@ const parseTemperatures = (temps) => R.map(
     temps)
 
 
+
 describe('WeeklyWeather', () => {
-    beforeEach(() => render(<WeeklyWeather weather = {temperatures}/>))
-    const temperatures = [1];
    describe("When rendering next week's weather", () => {
-       it("Should display the correct temperatures", () => {
+       let rerender;
+       beforeEach(() => {
+           rerender = render(<WeeklyWeather weather={[1]}/>).rerender
+       })
+       it.each([
+           [[1, 2]],
+           [[1, 9, -2]],
+           [[-12, -3, 9, 54, 34]]
+       ])('Display the temperatures %s', async (temperatures) => {
+           await rerender(<WeeklyWeather weather={temperatures}/>);
            const actual = screen.queryAllByTestId('temp');
-           const expected = [1];
            const actualTemps = parseTemperatures(actual);
-           expect(actualTemps).toEqual(expected);
+           expect(actualTemps).toEqual(temperatures);
        })
    })
 })
