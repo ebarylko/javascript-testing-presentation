@@ -1,8 +1,8 @@
-const R = require('ramda');
+import * as R from 'ramda';
 import * as React from 'react';
-const { render, screen , queryAllByTestId} =  require('@testing-library/react');
-const { WeeklyWeather } = require('../src/app/defaultWeather.js');
-const {toCelsiusSingleDecimal} = require('../src/app/defaultWeather.js');
+import { render, screen } from '@testing-library/react';
+import { WeeklyWeather } from '../src/app/defaultWeather.js';
+import { toCelsiusSingleDecimal } from '../src/app/defaultWeather.js';
 
 describe("toCelsiusSingleDecimal", () => {
     const fahrenheitTemps = [32, -25, 90, 0, -40];

@@ -1,8 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-// require('dotenv').config();
 import * as R from "ramda";
-// const R = require('ramda');
 import styles from './page.module.css'
 const nextWeekTemp = (weather) => R.take(7, weather);
 const toCelsius = (temp) => (temp - 32) * 5 / 9;
