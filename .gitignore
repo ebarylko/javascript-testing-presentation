@@ -39,3 +39,6 @@ next-env.d.ts
  
 # environment variables
 .env
+
+# cypress related stuff
+cypress/screenshots
