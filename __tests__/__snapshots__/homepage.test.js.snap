@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`WeeklyWeather When rendering next week's weather Should display the correct temperatures 1`] = `[]`;
