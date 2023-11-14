@@ -24,7 +24,6 @@ export function weatherData() {
 }
 
 export function WeeklyWeather(props) {
-    console.log(props.weather)
     const temperatures = props.weather.map((temp, key) => (
         <div key={key} className="card">
             <div className="card-content">
