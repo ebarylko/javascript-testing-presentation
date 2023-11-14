@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 3008",
     "acceptance": "npx cypress run",
-    "unit": "npx jest",
+    "unit": "npx jest --watch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -20,6 +20,7 @@
     "ramda": "^0.29.1",
     "react": "latest",
     "react-dom": "latest",
+    "react-test-renderer": "^18.2.0",
     "sass": "^1.68.0",
     "vercel": "^32.4.1"
   },
