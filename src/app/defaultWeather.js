@@ -22,7 +22,9 @@ export function weatherData() {
         }
 
         return response.json()
-    }).then(data => nextWeekTemp(data.days).map(day => toCelsiusSingleDecimal(day.temp)))
+    }).then(data => {
+        console.log("The data", data)
+        return nextWeekTemp(data.days).map(day => toCelsiusSingleDecimal(day.temp)) })
 }
 
 export function WeeklyWeather(props) {
